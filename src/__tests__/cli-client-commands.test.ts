@@ -1168,11 +1168,8 @@ function createStubClient(params: {
   return {
     command,
     devices: {
+      ...createThrowingMethodGroup<AgentDeviceClient['devices']>(),
       list: async () => [],
-      capabilities: unexpectedCommandCall,
-      boot: unexpectedCommandCall,
-      shutdown: unexpectedCommandCall,
-      pairWearable: unexpectedCommandCall,
     },
     sessions: {
       list: async () => [],
@@ -1252,7 +1249,7 @@ function createStubClient(params: {
         })),
     },
     capture: {
-      inspectPoint: unexpectedCommandCall,
+      ...createThrowingMethodGroup<AgentDeviceClient['capture']>(),
       snapshot: async () => ({
         nodes: [],
         truncated: false,
@@ -1264,7 +1261,6 @@ function createStubClient(params: {
           path: '/tmp/screenshot.png',
           identifiers: { session: 'default' },
         })),
-      diff: unexpectedCommandCall,
     },
     interactions: createThrowingMethodGroup<AgentDeviceClient['interactions']>(),
     replay: createThrowingMethodGroup<AgentDeviceClient['replay']>(),
