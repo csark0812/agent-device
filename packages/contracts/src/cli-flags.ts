@@ -134,6 +134,7 @@ export type CliFlags = CloudProviderProfileFields &
     foreground?: boolean;
     surface?: SessionSurface;
     headless?: boolean;
+    boot?: boolean;
     restart?: boolean;
     noRecord?: boolean;
     /**

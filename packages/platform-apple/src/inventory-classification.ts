@@ -36,6 +36,7 @@ export function isSupportedAppleRuntime(runtime: string): boolean {
   const normalized = normalizeAppleDescriptor(runtime);
   return (
     normalized.includes('ios') ||
+    normalized.includes('watchos') ||
     normalized.includes('tvos') ||
     normalized.includes('watchos') ||
     normalized.includes('xros') ||
@@ -59,6 +60,7 @@ export function resolveAppleTargetFromLabel(value: string): DeviceTarget | null 
 }
 
 export function resolveAppleOs(target: DeviceTarget, descriptors: string[]): AppleOS {
+  if (descriptors.some((descriptor) => /\b(watch|watchos)\b/i.test(descriptor))) return 'watchos';
   if (target === 'tv') return 'tvos';
   if (descriptors.some((descriptor) => APPLE_WATCH_PATTERN.test(descriptor))) return 'watchos';
   if (descriptors.some((descriptor) => APPLE_VISION_PATTERN.test(descriptor))) return 'visionos';

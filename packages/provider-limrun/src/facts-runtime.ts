@@ -165,6 +165,7 @@ export function limrunAppLogFacts(
       providerMode: 'provider-runtime',
     },
     operations: {
+      pairWearable: liveSessionUnavailable,
       appLogInspect: available,
       appLogDoctor: available,
       appLogStart: available,

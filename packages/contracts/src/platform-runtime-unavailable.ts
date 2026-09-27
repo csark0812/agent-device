@@ -81,6 +81,7 @@ export type UnavailablePlatformRuntimeFacts = Readonly<{
   perf?: RuntimeOperationUnavailability;
   readiness?: RuntimeOperationUnavailability;
   shutdown?: RuntimeOperationUnavailability;
+  wearablePairing?: RuntimeOperationUnavailability;
   lifecycle: ApplicationLifecycleOperationFacts;
 }>;
 
@@ -136,6 +137,7 @@ const UNAVAILABLE_CELLS = {
   perf: true,
   readiness: true,
   shutdown: true,
+  wearablePairing: true,
 } satisfies Record<UnavailableCellKey, true>;
 
 /** Fills every cell name through `fn`, in the one place a cell record is assembled by key. */
@@ -274,6 +276,7 @@ export function createUnavailablePlatformRuntimeFacts(
       bootTarget: frozen.readiness,
       bootTargetHeadless: frozen.readiness,
       shutdownTarget: frozen.shutdown,
+      pairWearable: frozen.wearablePairing,
       ...frozen.lifecycle,
     },
   });

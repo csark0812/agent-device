@@ -44,6 +44,8 @@ export type {
   AgentDeviceSessionDevice,
   DeviceBootOptions,
   DeviceShutdownOptions,
+  PairWearableOptions,
+  PairWearableResult,
   StartupPerfSample,
 } from '../client-device-view.ts';
 export type {
