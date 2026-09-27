@@ -277,6 +277,7 @@ await client.command.tvRemote({
 
 await client.command.appSwitcher();
 await client.command.actionButton();
+await client.command.screenLock();
 await client.command.fold({ pose: 'open' });
 await client.command.fold({
   keyframes: [
@@ -302,6 +303,7 @@ Supported command methods:
 - `orientation`
 - `appSwitcher`
 - `actionButton`
+- `screenLock`
 - `fold`
 - `keyboard`
 - `clipboard`

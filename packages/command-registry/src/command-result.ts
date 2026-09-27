@@ -17,6 +17,7 @@ import type {
   FoldCommandResult,
   HomeCommandResult,
   OrientationCommandResult,
+  ScreenLockCommandResult,
   TvRemoteCommandResult,
 } from '@agent-device/contracts/navigation';
 import type {
@@ -82,6 +83,7 @@ export interface CommandResultMap {
   push: PushCommandResult;
   record: RecordingCommandResult;
   replay: ReplayCommandResult;
+  'screen-lock': ScreenLockCommandResult;
   scroll: ScrollCommandResult;
   shutdown: ShutdownCommandResult;
   test: ReplaySuiteResult;

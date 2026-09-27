@@ -121,6 +121,7 @@ export type {
   OrientationCommandOptions,
   PrepareCommandOptions,
   ReactNativeCommandOptions,
+  ScreenLockCommandOptions,
   TvRemoteCommandOptions,
   ViewportCommandOptions,
   WaitCommandOptions,
