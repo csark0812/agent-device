@@ -1,17 +1,20 @@
 {
-  "name": "agent-device",
-  "version": "0.21.15",
+  "name": "@csark0812/agent-device",
+  "version": "0.21.15-et.1",
   "description": "Mobile app automation and verification for AI coding agents. CLI, MCP server, and typed Node.js API for iOS, Android, HarmonyOS, TV, web, macOS, and Linux.",
-  "mcpName": "io.github.callstack/agent-device",
+  "mcpName": "io.github.csark0812/agent-device",
   "license": "MIT",
   "author": "Callstack",
   "homepage": "https://agent-device.dev/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/callstack/agent-device.git"
+    "url": "git+https://github.com/csark0812/agent-device.git"
   },
   "bugs": {
-    "url": "https://github.com/callstack/agent-device/issues"
+    "url": "https://github.com/csark0812/agent-device/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "type": "module",
   "packageManager": "pnpm@11.17.0",

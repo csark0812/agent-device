@@ -125,7 +125,10 @@ test('from this source tree, the project root is the agent-device manifest, not 
     name?: string;
     version?: string;
   };
-  assert.equal(manifest.name, 'agent-device');
+  assert.ok(
+    manifest.name === 'agent-device' || manifest.name === '@csark0812/agent-device',
+    `unexpected root package name: ${String(manifest.name)}`,
+  );
   assert.equal(readVersion(), manifest.version);
 });
 

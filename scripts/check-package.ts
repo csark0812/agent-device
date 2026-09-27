@@ -37,6 +37,9 @@ type PackedManifest = PackedDependencies & {
 };
 
 const repoRoot = path.resolve(import.meta.dirname, '..');
+const sourceManifest = JSON.parse(
+  fs.readFileSync(path.join(repoRoot, 'package.json'), 'utf8'),
+) as Readonly<{ name: string }>;
 const packDestinationFlag = '--pack-destination';
 const verifySnapshotBridgePreparation = process.argv.includes(
   '--verify-snapshot-bridge-preparation',
@@ -122,7 +125,7 @@ function installIntoCleanConsumer(tarball: string): string {
     `${JSON.stringify({ name: 'agent-device-package-check', private: true, type: 'module' }, null, 2)}\n`,
   );
   run('npm', ['install', '--ignore-scripts', '--no-audit', '--no-fund', tarball], consumerDir);
-  return path.join(consumerDir, 'node_modules', 'agent-device');
+  return path.join(consumerDir, 'node_modules', sourceManifest.name);
 }
 
 /**
@@ -145,7 +148,7 @@ function assertInstalledTreeIsNotASourceCheckout(installedRoot: string): void {
   manifest: PackedManifest,
 ): void {
   const specifiers = Object.keys(manifest.exports).map((subpath) =>
-    path.posix.join('agent-device', subpath),
+    path.posix.join(sourceManifest.name, subpath),
   );
   const probe = path.join(consumerDir, 'import-exports.mjs');
   fs.writeFileSync(

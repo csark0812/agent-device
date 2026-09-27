@@ -10,7 +10,7 @@ export function resolveAgentDeviceProjectRoot(startDirectory: string): string {
       nearest ??= current;
       try {
         const name = (JSON.parse(fs.readFileSync(pkgPath, 'utf8')) as { name?: unknown }).name;
-        if (name === 'agent-device') return current;
+        if (name === 'agent-device' || name === '@csark0812/agent-device') return current;
       } catch {}
     }
     current = path.dirname(current);
