@@ -303,6 +303,7 @@ export type Interactor = {
       appBundleId?: string;
       launchConsole?: string;
       launchArgs?: string[];
+      launchEnvironment?: Readonly<Record<string, string>>;
       terminateRunningApp?: boolean;
       url?: string;
     },
