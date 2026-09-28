@@ -7,12 +7,12 @@
     "url": "https://github.com/csark0812/agent-device",
     "source": "github"
   },
-  "version": "0.21.15-et.1",
+  "version": "0.21.15-et.2",
   "packages": [
     {
       "registryType": "npm",
       "identifier": "@csark0812/agent-device",
-      "version": "0.21.15-et.1",
+      "version": "0.21.15-et.2",
       "transport": {
         "type": "stdio"
       },
